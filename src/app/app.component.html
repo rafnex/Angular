@@ -300,6 +300,9 @@
       visibility: hidden;
     }
   }
+
+  hr {width:100%; margin: 20px 0;}
+  .demo-container {display: flex; align-items: flex-start; width: 100%;}
 </style>
 
 <!-- Toolbar -->
@@ -349,6 +352,19 @@
     </svg>
 
   </div>
+
+  <h2>Demo</h2>
+  <hr/>
+  <div class="card-container">
+    <a [routerLink]="'demo/ngtemplate'" class="card">ngTemplate</a>
+    <a [routerLink]="'demo/ngcontent'" class="card">ngContet</a>
+    <a [routerLink]="'/'" class="card">ngTemplateOutlet</a>
+  </div>
+  <hr/>
+  <div class="demo-container">
+    <router-outlet></router-outlet>
+  </div>
+  <hr/>
 
   <!-- Resources -->
   <h2>Resources</h2>
@@ -481,4 +497,4 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->

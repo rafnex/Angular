@@ -1,0 +1,8 @@
+<p>ngtemplate demo</p>
+<div *ngIf="isLoggedIn; else anonymous">
+    Login successful<br/>
+    <button (click)="isLoggedIn=!isLoggedIn">Logout</button></div>
+<ng-template #anonymous>
+    Please login first <br/>
+    <button (click)="isLoggedIn=!isLoggedIn">Login</button>
+</ng-template>
