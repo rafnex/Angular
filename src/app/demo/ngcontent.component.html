@@ -1,0 +1,26 @@
+<p>ngcontent demo</p>
+
+A box
+<app-box>
+    Custom content <!-- this will appear in the body -->
+    <header><strong>This is the title</strong><hr/></header>
+    <div>
+        <!-- this will appear in the body as well -->
+        <div>
+            {{defaultBoxMessage}}
+            <marquee>Test <i>custom</i>&nbsp;<strong>html</strong> in the body</marquee>
+            <button (click)="showMessage()">Alert me!</button>
+        </div>
+    </div>
+   
+    <footer>
+        <hr/>
+        Footer <span>{{counter$ | async}}</span>
+    </footer>
+    Extra content <!-- this will appear in the body -->
+</app-box>
+
+<br/>
+<app-box>
+    <div style="padding:10px;">Simple box</div>
+</app-box>

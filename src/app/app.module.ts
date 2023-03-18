@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgtemplateComponent } from './demo/ngtemplate.component';
+import { NgcontentComponent } from './demo/ngcontent.component';
+import { BoxComponent } from './demo/box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgtemplateComponent
+    NgtemplateComponent,
+    NgcontentComponent,
+    BoxComponent
   ],
   imports: [
     BrowserModule,
