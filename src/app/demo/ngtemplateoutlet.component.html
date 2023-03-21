@@ -1,0 +1,61 @@
+<p>ngtemplateoutlet demo</p>
+
+<!--the template will not render on it's own-->
+<ng-template #basic>
+    <p>Basic <strong>ngTemplate</strong> usage</p>
+</ng-template>
+
+
+
+<ng-container *ngTemplateOutlet="basic">
+    To render you need to use the ngTemplateOutlet (this message will not be displayed since this content is replaced by the template)
+</ng-container>
+
+<div *ngTemplateOutlet="basic">
+    It doesn't have to be an ng-container. we can use any element
+    However, not that for this instance, the div element will not be rendered, only the template content.
+</div>
+
+<input type="checkbox" [(ngModel)]="showBasicTemplate" />Toggle template - {{showBasicTemplate}}
+<div *ngIf="showBasicTemplate else other">
+    Default content
+</div>
+<ng-template #other>
+    <div>Another template</div>
+</ng-template>
+
+<br/>
+<div>
+    Passing data to template
+    <ng-template #withData let-myData="myModel">
+        <p>Test template with data: <strong>{{myData}}</strong></p>
+    </ng-template>
+
+    <ng-container [ngTemplateOutlet]="withData" [ngTemplateOutletContext]="{myModel:'testing 123'}"></ng-container>
+    <!-- alternative -->
+    <ng-container *ngTemplateOutlet="withData; context:{myModel:'testing 123'}"></ng-container>
+</div>
+
+<br/>
+<div>
+    <button (click)="selectedTemplate=template1">Template 1</button>
+    <button (click)="selectedTemplate=template2">Template 2</button>
+    <button (click)="selectedTemplate=template3">Template 3</button>
+
+    <ng-template #template1 let-myData>
+        <p style="background-color: aliceblue;">Template 1 with data: <strong>{{myData}}</strong></p>
+    </ng-template>
+    <ng-template #template2 let-myData>
+        <p style="background-color:cadetblue">Template 2 with data: <strong>{{myData}}</strong></p>
+    </ng-template>
+    <ng-template #template3 let-myData>
+        <p  style="background-color:cornflowerblue">Template 3 with data: <strong>{{myData}}</strong></p>
+    </ng-template>
+
+    <ng-container *ngTemplateOutlet="selectedTemplate ?? template1; context:{ $implicit:'testing 123'}"></ng-container>
+</div>
+
+
+<br/>
+<hr/>
+read: <a href="https://www.tektutorialshub.com/angular/ngtemplateoutlet-in-angular/" target="_blank">ngTemplateOutlet</a>
