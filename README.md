@@ -1,5 +1,5 @@
 # Ngtemplateapp
-A playground for learning ngTemplate, ngContent, and ngTemplateOutlet
+A playground for learning ngTemplate, ngContent, ngTemplateOutlet, and ngComponentOutlet
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
